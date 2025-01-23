@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <contextName>seckill</contextName>
-    <property name="log.path" value="D:/logs/seckill"/>
+    <property name="log.path" value="/Users/yue/Documents/java/seckill/log"/>
 
     <!-- console -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">

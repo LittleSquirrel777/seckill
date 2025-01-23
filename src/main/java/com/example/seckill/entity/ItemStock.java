@@ -1,6 +1,6 @@
 package com.example.seckill.entity;
 
-import jakarta.validation.constraints.Min;
+import javax.validation.constraints.Min;
 
 public class ItemStock {
     /**

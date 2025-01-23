@@ -3,9 +3,9 @@ package com.example.seckill.component;
 import com.example.seckill.common.ErrorCode;
 import org.springframework.stereotype.Component;
 
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.Validation;
-import jakarta.validation.Validator;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;

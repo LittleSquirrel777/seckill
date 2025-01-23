@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/order")

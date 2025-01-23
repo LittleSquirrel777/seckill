@@ -1,9 +1,9 @@
 package com.example.seckill.controller.Interceptor;
 
 import com.alibaba.fastjson.JSONObject;
-import com.nowcoder.seckill.common.ErrorCode;
-import com.nowcoder.seckill.common.ResponseModel;
-import com.nowcoder.seckill.entity.User;
+import com.example.seckill.common.ErrorCode;
+import com.example.seckill.common.ResponseModel;
+import com.example.seckill.entity.User;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
