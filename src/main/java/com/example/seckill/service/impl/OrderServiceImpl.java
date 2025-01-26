@@ -43,7 +43,7 @@ public class OrderServiceImpl implements OrderService, ErrorCode {
      * @return
      */
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    private String generateOrderID() {
+    public String generateOrderID() {
         StringBuilder sb = new StringBuilder();
 
         // 拼入日期
@@ -72,7 +72,8 @@ public class OrderServiceImpl implements OrderService, ErrorCode {
         }
 
         // 校验用户
-        User user = userService.findUserById(userId);
+//        User user = userService.findUserById(userId);
+        User user = userService.findUserFromCache(userId);
         if (user == null) {
             throw new BusinessException(PARAMETER_ERROR, "指定的用户不存在！");
         }

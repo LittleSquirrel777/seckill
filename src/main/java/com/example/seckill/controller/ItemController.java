@@ -27,7 +27,8 @@ public class ItemController {
     @RequestMapping(path = "/detail/{id}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseModel getItemDetail(@PathVariable("id") int id) {
-        Item item = itemService.findItemById(id);
+//        Item item = itemService.findItemById(id);
+        Item item = itemService.findItemInCache(id);
         return new ResponseModel(item);
     }
 
