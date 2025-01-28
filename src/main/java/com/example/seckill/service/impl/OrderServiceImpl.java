@@ -90,10 +90,10 @@ public class OrderServiceImpl implements OrderService, ErrorCode {
 
         // 校验用户
 //        User user = userService.findUserById(userId);
-//        User user = userService.findUserFromCache(userId);
-//        if (user == null) {
-//            throw new BusinessException(PARAMETER_ERROR, "指定的用户不存在！");
-//        }
+        User user = userService.findUserFromCache(userId);
+        if (user == null) {
+            throw new BusinessException(PARAMETER_ERROR, "指定的用户不存在！");
+        }
 
         // 校验商品
 //        Item item = itemService.findItemById(itemId);
@@ -103,21 +103,21 @@ public class OrderServiceImpl implements OrderService, ErrorCode {
         }
 
         // 校验库存
-//        int stock = item.getItemStock().getStock();
-//        if (amount > stock) {
-//            throw new BusinessException(STOCK_NOT_ENOUGH, "库存不足！");
-//        }
+        int stock = item.getItemStock().getStock();
+        if (amount > stock) {
+            throw new BusinessException(STOCK_NOT_ENOUGH, "库存不足！");
+        }
 
         // 校验活动
-//        if (promotionId != null) {
-//            if (item.getPromotion() == null) {
-//                throw new BusinessException(PARAMETER_ERROR, "指定的商品无活动！");
-//            } else if (!item.getPromotion().getId().equals(promotionId)) {
-//                throw new BusinessException(PARAMETER_ERROR, "指定的活动不存在！");
-//            } else if (item.getPromotion().getStatus() != 0) {
-//                throw new BusinessException(PARAMETER_ERROR, "指定的活动未开始！");
-//            }
-//        }
+        if (promotionId != null) {
+            if (item.getPromotion() == null) {
+                throw new BusinessException(PARAMETER_ERROR, "指定的商品无活动！");
+            } else if (!item.getPromotion().getId().equals(promotionId)) {
+                throw new BusinessException(PARAMETER_ERROR, "指定的活动不存在！");
+            } else if (item.getPromotion().getStatus() != 0) {
+                throw new BusinessException(PARAMETER_ERROR, "指定的活动未开始！");
+            }
+        }
 
         // 扣减库存
         // 增加行锁：前提是商品主键字段上必须有索引。
