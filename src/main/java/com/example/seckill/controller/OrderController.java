@@ -31,7 +31,8 @@ public class OrderController implements ErrorCode {
             /*HttpSession session,*/ int itemId, int amount, Integer promotionId, String token) {
 //        User user = (User) session.getAttribute("loginUser");
         User user = (User) redisTemplate.opsForValue().get(token);
-        orderService.createOrder(user.getId(), itemId, amount, promotionId);
+//        orderService.createOrder(user.getId(), itemId, amount, promotionId);
+        orderService.createOrderAsync(user.getId(), itemId, amount, promotionId);
         return new ResponseModel();
     }
 
